@@ -1,0 +1,42 @@
+Ceníme práci na projektu! 🏆 Prohlédli jsme si kód a máme k němu následující poznámky:
+
+1. Pojmenování identifikátorů
+- Třída Pojisteni by se mohlo jmenovat spíš Pojisteny nebo Pojistenec.
+- Třída Projekt není ideálně pojmenována, protože neodráží svou funkci, která je správa pojištěných událostí. Lepší by bylo pojmenování jako EvidencePojistenych nebo SpravaPojistnych.
+
+2. Dodržení principů SRP a SoC
+- Třída Projekt kombinuje logiku pro správu pojištěných osob a komunikaci s uživatelem, což porušuje princip Single Responsibility Principle (SRP) i Separation of Concerns (SoC).
+
+3. Vhodný výběr datových typů
+- Telefonní číslo je správně uchováváno jako String, protože jeho číselná hodnota nemá aritmetický význam a může začínat nulou.
+- Pro věk je použit datový typ int, což je vhodné.
+
+4. Formátování kódu
+- zbytečné dva volné řádky 91 a 92. I když teď se vám to může jevit jako maličkost, v práci v teamu, kde víc programátorů pracuje na stejném zdrojovém kódu, takovéto drobnosti můžou způsobit konflikty (při merge na GitHub).
+- Kód má konzistentní odsazení a dodržuje základní konvence jazyka Java, jako jsou závorky a použití camelCase pro pojmenování proměnných a metod.
+
+5. Duplicitní kód a nekonečné cykly
+- validace na prázdné jméno a příjmení by se dala vložit do metody a tím se vyhnout opakování kódu
+- Nekonečný cyklus je správně ukončen volbou 4, takže kód neobsahuje žádné problematické nekonečné smyčky.
+
+6. Validace vstupních dat
+- oceňuji validaci tel. Čísla pomocí regulárních výrazů, ale co v případě, že uživatel zadá svůj telefon v mezinárodním formátu? (možná nemá jenom zahraniční telefonní číslo)
+
+7. Logičnost a složitost
+- proměnná pokracovat by se dala eliminovat pomocí  while (volba != 4) {
+- tato část kódu by se dala zjednodušit, aby nedocházelo k dvojnásobnému porovnání na isEmpty.
+                        if (jmeno.isEmpty()) {
+                            System.out.println("Jméno není vyplněné. Zkuste to prosím znovu.");
+                        }
+                    } while (jmeno.isEmpty());
+- Algoritmy jsou logické a jednoduché, metody jsou krátké a srozumitelné.
+
+
+8. Komentáře
+- Komentáře jsou srozumitelné a adekvátní.
+
+9. Celkové hodnocení
+- Kód dobře reflektuje požadavky zadané v zadání a je dobře strukturovaný.
+Jako junior programátor je student na dobré cestě. Doporučil bych však oddělit logiku pro uživatelské rozhraní od logiky pro správu dat, aby byl kód čistší a lépe udržitelný.
+
+Doporučujeme případné výtky v kódu opravit, abyste jej mohli pak prezentovat budoucímu zaměstnavateli v co nejlepší kvalitě. Pokud byste potřebovali s čímkoli pomoci, naplánujte si s námi konzultaci, rádi vám poradíme!
